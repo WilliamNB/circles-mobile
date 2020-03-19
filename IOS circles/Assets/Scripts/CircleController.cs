@@ -6,8 +6,7 @@ public class CircleController : MonoBehaviour
 {
     private Vector2 screenBounds;
     private int state = 0;
-    //for when a circle spawns another
-    private bool original = true;
+
 
     // Start is called before the first frame update
     void Start()

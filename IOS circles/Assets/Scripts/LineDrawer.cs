@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class LineDrawer : MonoBehaviour
 {
-
     public GameObject linePrefab;
+    public GameObject linePrefabB;
+    public GameObject linePrefabG;
+    public GameObject linePrefabP;
+    public GameObject linePrefabR;
     public GameObject currentLine;
 
     public LineRenderer lineRenderer;
@@ -23,21 +26,33 @@ public class LineDrawer : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) == true)
         {
-          /*  Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider != null)
             {
-
-                if (hit.transform.position.x == this.transform.position.x)
+                Debug.Log("jit ");
+                switch (hit.transform.tag)
                 {
-                    this.setState(1);
-                    this.name = "clicked";
+                    case "circleB":
+                        linePrefab = linePrefabB;
+                        break;
+                    case "circleG":
+                        linePrefab = linePrefabG;
+                        break;
+                    case "circleP":
+                        linePrefab = linePrefabP;
+                        break;
+                    case "circleR":
+                        linePrefab = linePrefabR;
+                        break;
                 }
-            } */
-            CreateLine();
+
+                CreateLine();
+            } 
         }
+
         if (Input.GetMouseButton(0))
         {
             Vector2 tempPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -46,7 +61,12 @@ public class LineDrawer : MonoBehaviour
                 UpdateLine(tempPos);
             }
         }
-        
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            
+        }
+
     }
 
     void CreateLine()
