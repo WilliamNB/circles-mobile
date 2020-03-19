@@ -23,7 +23,7 @@ public class SpawnCircles : MonoBehaviour
     private void spawn()
     {
         int range = Random.Range(1, 5);
-        switch (1)
+        switch (range)
         {
             case 1:
                 GameObject test = Instantiate(circlePrefab1) as GameObject;

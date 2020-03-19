@@ -5,6 +5,7 @@ using UnityEngine;
 public class CircleController : MonoBehaviour
 {
     private Vector2 screenBounds;
+    private int state = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,35 +27,36 @@ public class CircleController : MonoBehaviour
 
                 if (hit.transform.position.x == this.transform.position.x)
                 {
-                   // this.setState(1);
+                    this.setState(1);
                     this.name = "clicked";
                 }
-
-                /**              if (hit.transform.name == "circle2(Clone)" && circNum == 2)
-                              {
-                                  this.setState(1);
-                                  this.name = "clicked";
-                              }
-
-                              Debug.Log(hit.collider.gameObject.name);
-                              if (hit.transform.name == "circle3(Clone)" && circNum == 3)
-                              {
-                                  this.setState(1);
-                                  this.name = "clicked";
-                              }
-
-                              Debug.Log(hit.collider.gameObject.name);
-                              if (hit.transform.name == "circle4(Clone)" && circNum == 4)
-                              {
-                                  this.setState(1);
-                                  this.name = "";
-                              }
-                         */
             }
         }
+
+        if (state == 1)
+        {
+            //this.GetComponent<Rigidbody2D>().gravityScale = 0;
+            Destroy(this.GetComponent<Rigidbody2D>());
+            Destroy(this.GetComponent<CircleCollider2D>());
+        }
+
+    /*    if (transform.position.y < -1.5)
+        {
+            //GameObject.FindWithTag("MainCamera").GetComponent<Spawner>().spawnGreen();
+            Debug.Log("s rate " + spw.spawnRate);
+        } */
+
+        if (transform.position.y < -5)
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 
-
+    private void setState(int value)
+    {
+        state = value;
+    }
 
 
 
