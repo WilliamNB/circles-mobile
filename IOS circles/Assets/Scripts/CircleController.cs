@@ -6,6 +6,8 @@ public class CircleController : MonoBehaviour
 {
     private Vector2 screenBounds;
     private int state = 0;
+    //for when a circle spawns another
+    private bool original = true;
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +41,6 @@ public class CircleController : MonoBehaviour
             Destroy(this.GetComponent<Rigidbody2D>());
             Destroy(this.GetComponent<CircleCollider2D>());
         }
-
-    /*    if (transform.position.y < -1.5)
-        {
-            //GameObject.FindWithTag("MainCamera").GetComponent<Spawner>().spawnGreen();
-            Debug.Log("s rate " + spw.spawnRate);
-        } */
 
         if (transform.position.y < -5)
         {
