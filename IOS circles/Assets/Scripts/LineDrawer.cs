@@ -64,13 +64,15 @@ public class LineDrawer : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            
+            Destroy(currentLine);
+            Destroy(GameObject.Find("clicked"));
         }
 
     }
 
     void CreateLine()
     {
+
         currentLine = Instantiate(linePrefab, Vector3.zero, Quaternion.identity);
         lineRenderer = currentLine.GetComponent<LineRenderer>();
         edgeCollider = currentLine.GetComponent<EdgeCollider2D>();

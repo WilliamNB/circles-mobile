@@ -13,11 +13,11 @@ public class LineCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (Input.GetMouseButtonUp(0))
-        {
-            Destroy(this.gameObject);
-            Destroy(GameObject.Find("clicked"));
-        }
+     // if (Input.GetMouseButtonUp(0))
+       // {
+         //   Destroy(this.gameObject);
+           // Destroy(GameObject.Find("clicked"));
+      //  }
     }
 
     void OnCollisionEnter2D(Collision2D col)
