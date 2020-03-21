@@ -54,6 +54,7 @@ public class LineCollider : MonoBehaviour
             Destroy(col.gameObject);
             Destroy(this.gameObject);
             Destroy(GameObject.Find("clicked"));
+            Score.IncreaseScore();
         }
         else
         {
