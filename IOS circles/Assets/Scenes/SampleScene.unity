@@ -255,6 +255,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1744103738257378005, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1763938737177285981, guid: 3572643cfa53e6b42897730bc4ceac3c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -269,6 +274,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Line
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634416016031084463, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2685385107350738654, guid: 3572643cfa53e6b42897730bc4ceac3c,
         type: 3}
@@ -324,6 +334,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684280660898864086, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646866637621032568, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4811738324615569628, guid: 3572643cfa53e6b42897730bc4ceac3c,
         type: 3}
