@@ -36,12 +36,14 @@ public class Spawn : MonoBehaviour
             if (this.name == ("circleB(Clone)") || this.name == ("circleG(Clone)") || this.name == ("circleP(Clone)") || this.name == ("circleR(Clone)") )
             {
                 numOfCircles = GameObject.FindGameObjectsWithTag(this.tag);
+               // Debug.Log("Test");
+               // Debug.Log("Debug    " + numOfCircles.Length);
                 //to only spawn if there isnt already a circle of the same colour
-                if (numOfCircles.Length == 1)
-                {
+                if (numOfCircles.Length == 2)
+                 {
                     spawn();
                     spawned += 1;
-                }
+                 }
             }
         } 
     }
