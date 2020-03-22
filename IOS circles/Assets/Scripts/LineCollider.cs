@@ -60,33 +60,5 @@ public class LineCollider : MonoBehaviour
         {
            // Physics2D.IgnoreCollision(col.GetComponent<CircleCollider2D>(), GetComponent<Collider>());
         }
-     /**   if (col.gameObject.name == "circleB(Clone)")
-        {
-            Destroy(col.gameObject);
-            Destroy(this.gameObject);
-            Destroy(GameObject.Find("clicked"));
-            //score.increase();
-        }
-        if (col.gameObject.name == "circleG(Clone)")
-        {
-            Destroy(col.gameObject);
-            Destroy(this.gameObject);
-            Destroy(GameObject.Find("clicked"));
-           // score.increase();
-        }
-        if (col.gameObject.name == "circleP(Clone)")
-        {
-            Destroy(col.gameObject);
-            Destroy(this.gameObject);
-            Destroy(GameObject.Find("clicked"));
-          //  score.increase();
-        }
-        if (col.gameObject.name == "circleR(Clone)")
-        {
-            Destroy(col.gameObject);
-            Destroy(this.gameObject);
-            Destroy(GameObject.Find("clicked"));
-          //  score.increase();
-        } */
     }
 }

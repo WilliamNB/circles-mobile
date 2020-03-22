@@ -43,6 +43,20 @@ public class CircleController : MonoBehaviour
 
         if (transform.position.y < -5.5)
         {
+            switch (this.tag) {
+                case "circleB":
+                    LifeController.LoseLife(1);
+                    break;
+                case "circleG":
+                    LifeController.LoseLife(2);
+                    break;
+                case "circleP":
+                    LifeController.LoseLife(3);
+                    break;
+                case "circleR":
+                    LifeController.LoseLife(4);
+                    break;
+            }
             Destroy(this.gameObject);
         }
 
