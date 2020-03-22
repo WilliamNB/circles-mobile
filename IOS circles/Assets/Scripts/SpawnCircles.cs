@@ -27,19 +27,19 @@ public class SpawnCircles : MonoBehaviour
         {
             case 1:
                 GameObject test = Instantiate(circlePrefab1) as GameObject;
-                test.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y);
+                test.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y + 1);
                 break;
             case 2:
                 GameObject test2 = Instantiate(circlePrefab2) as GameObject;
-                test2.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y);
+                test2.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y + 1);
                 break;
             case 3:
                 GameObject test3 = Instantiate(circlePrefab3) as GameObject;
-                test3.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y);
+                test3.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y + 1);
                 break;
             case 4:
                 GameObject test4 = Instantiate(circlePrefab4) as GameObject;
-                test4.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y);
+                test4.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y + 1);
                 break;
         }
 

@@ -21,7 +21,7 @@ public class Spawn : MonoBehaviour
     private void spawn()
     {
         GameObject test = Instantiate(circlePrefab) as GameObject;
-        test.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y);
+        test.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y + 1);
         
               
     }

@@ -41,7 +41,7 @@ public class CircleController : MonoBehaviour
             Destroy(this.GetComponent<CircleCollider2D>());
         }
 
-        if (transform.position.y < -5)
+        if (transform.position.y < -5.5)
         {
             Destroy(this.gameObject);
         }
