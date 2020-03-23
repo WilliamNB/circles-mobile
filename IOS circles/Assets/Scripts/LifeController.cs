@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LifeController : MonoBehaviour
 {
-    public static Sprite Grey;
-    private static bool BLife;
-    private static bool GLife;
-    private static bool PLife;
-    private static bool RLife;
+
+    public Sprite Grey;
+    public Image image;
+    private bool BLife;
+    private bool GLife;
+    private bool PLife;
+    private bool RLife;
 
 
     void Start()
@@ -20,27 +23,7 @@ public class LifeController : MonoBehaviour
          RLife = true;
     }
 
-  /*  private void Update()
-    {
-        if (GameObject.FindGameObjectWithTag("circleB").transform.position.y < -5.5)
-        {
-            LoseLife(1);
-        }
-        if (GameObject.FindGameObjectWithTag("circleG").transform.position.y < -5.5)
-        {
-            LoseLife(2);
-        }
-        if (GameObject.FindGameObjectWithTag("circleP").transform.position.y < -5.5)
-        {
-            LoseLife(3);
-        }
-        if (GameObject.FindGameObjectWithTag("circleR").transform.position.y < -5.5)
-        {
-            LoseLife(4);
-        }
-    } */
-
-    public static void LoseLife(int colour)
+    public void LoseLife(int colour)
     {
         switch (colour)
         {
@@ -48,7 +31,8 @@ public class LifeController : MonoBehaviour
                 if(BLife == true)
                 {
                     SetLife(colour);
-                    GameObject.Find("B Life").GetComponent<SpriteRenderer>().sprite = Grey;
+                    image = GameObject.Find("B Life").GetComponent<Image>();
+                    image.sprite = Grey;
                 }
                 else
                 {
@@ -59,7 +43,8 @@ public class LifeController : MonoBehaviour
                 if (GLife == true)
                 {
                     SetLife(colour);
-                    GameObject.Find("G Life").GetComponent<SpriteRenderer>().sprite = Grey;
+                    image = GameObject.Find("G Life").GetComponent<Image>();
+                    image.sprite = Grey;
                 }
                 else
                 {
@@ -70,7 +55,8 @@ public class LifeController : MonoBehaviour
                 if (PLife == true)
                 {
                     SetLife(colour);
-                    GameObject.Find("P Life").GetComponent<SpriteRenderer>().sprite = Grey;
+                    image = GameObject.Find("P Life").GetComponent<Image>();
+                    image.sprite = Grey;
                 }
                 else
                 {
@@ -81,7 +67,8 @@ public class LifeController : MonoBehaviour
                 if (RLife == true)
                 {
                     SetLife(colour);
-                    GameObject.Find("R Life").GetComponent<SpriteRenderer>().sprite = Grey;
+                    image = GameObject.Find("R Life").GetComponent<Image>();
+                    image.sprite = Grey;
                 }
                 else
                 {
@@ -91,7 +78,7 @@ public class LifeController : MonoBehaviour
         }
     }
 
-    private static void SetLife(int colour)
+    private void SetLife(int colour)
     {
         switch (colour)
         {
@@ -110,7 +97,26 @@ public class LifeController : MonoBehaviour
         }
     }
 
-    private static void EndGame()
+    void OnCollisionEnter2D(Collision2D col)
+    {
+            switch (col.gameObject.tag)
+            {
+                case "circleB":
+                    LoseLife(1);
+                    break;
+                case "circleG":
+                    LoseLife(2);
+                    break;
+                case "circleP":
+                    LoseLife(3);
+                    break;
+                case "circleR":
+                    LoseLife(4);
+                    break;
+            }
+    }
+
+    private void EndGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }

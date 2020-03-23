@@ -8,6 +8,7 @@ TagManager:
   - circleG
   - circleP
   - circleR
+  - despawn
   layers:
   - Default
   - TransparentFX

@@ -41,25 +41,6 @@ public class CircleController : MonoBehaviour
             Destroy(this.GetComponent<CircleCollider2D>());
         }
 
-        if (transform.position.y < -5.5)
-        {
-            switch (this.tag) {
-                case "circleB":
-                    LifeController.LoseLife(1);
-                    break;
-                case "circleG":
-                    LifeController.LoseLife(2);
-                    break;
-                case "circleP":
-                    LifeController.LoseLife(3);
-                    break;
-                case "circleR":
-                    LifeController.LoseLife(4);
-                    break;
-            }
-            Destroy(this.gameObject);
-        }
-
     }
 
     private void setState(int value)
@@ -67,8 +48,14 @@ public class CircleController : MonoBehaviour
         state = value;
     }
 
-
-
-
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("enter collision");
+        if (col.gameObject.tag == "despawn")
+        {
+            Debug.Log("in if statement");
+            Destroy(this.gameObject);
+        }
+    }
 
 }
