@@ -29,15 +29,19 @@ public class LineCollider : MonoBehaviour
         if (this.gameObject.tag == col.gameObject.tag)
         {
             Destroy(col.gameObject);
+            col.gameObject.GetComponent<ParticleSystem>().Play();
             Destroy(this.gameObject);
             Destroy(GameObject.Find("clicked"));
+            GameObject.Find("clicked").GetComponent<ParticleSystem>().Play();
             Score.IncreaseScore();
         }
         else
         {
             Destroy(this.gameObject);
             Destroy(GameObject.Find("clicked"));
+            GameObject.Find("clicked").GetComponent<ParticleSystem>().Play();
             Destroy(col.gameObject);
+            col.gameObject.GetComponent<ParticleSystem>().Play();
         }
 
        /* switch (this.gameObject.layer)

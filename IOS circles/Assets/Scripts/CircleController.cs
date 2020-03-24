@@ -12,7 +12,12 @@ public class CircleController : MonoBehaviour
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        if (this.GetComponent<ParticleSystem>().isPlaying)//this.particleSystem.isPlaying)
+        {
+            this.GetComponent<ParticleSystem>().Stop();
+        }
     }
+
 
     // Update is called once per frame
     void Update()
@@ -57,5 +62,4 @@ public class CircleController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
 }
