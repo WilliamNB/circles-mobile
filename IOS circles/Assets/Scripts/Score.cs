@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
 
-    static int scoreValue;
+   public static int scoreValue = 3;
     public Text currentScore;
     int objectCount;
 

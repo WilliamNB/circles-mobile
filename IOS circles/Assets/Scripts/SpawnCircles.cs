@@ -8,9 +8,11 @@ public class SpawnCircles : MonoBehaviour
     public GameObject circlePrefab2;
     public GameObject circlePrefab3;
     public GameObject circlePrefab4;
-    public int spawnRate = 3;
+    public float spawnRate = 3;
     private Vector2 screenBounds;
     private float fix = 1.2F;
+    private int currentScore;
+    private bool increaseContoller = true;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +59,23 @@ public class SpawnCircles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        currentScore = Score.scoreValue;
+        if (currentScore > 1 && currentScore % 5 == 0)
+        {
+            if (increaseContoller == true)
+            {
+                increaseSpawnRate();
+            }
+        }
+        else
+        {
+            increaseContoller = true;
+        }
+    }
+
+    public void increaseSpawnRate()
+    {
+        spawnRate -= 0.1f;
+        increaseContoller = false;
     }
 }

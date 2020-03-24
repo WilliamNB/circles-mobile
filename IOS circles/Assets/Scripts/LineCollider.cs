@@ -24,8 +24,23 @@ public class LineCollider : MonoBehaviour
     {
         //Check collision name
         Debug.Log("collision name = " + col.gameObject.name);
+        //testing if colliding with wrong color increases fun
 
-        switch (this.gameObject.layer)
+        if (this.gameObject.tag == col.gameObject.tag)
+        {
+            Destroy(col.gameObject);
+            Destroy(this.gameObject);
+            Destroy(GameObject.Find("clicked"));
+            Score.IncreaseScore();
+        }
+        else
+        {
+            Destroy(this.gameObject);
+            Destroy(GameObject.Find("clicked"));
+            Destroy(col.gameObject);
+        }
+
+       /* switch (this.gameObject.layer)
         {
             case 9: //blue
                 Physics2D.IgnoreLayerCollision(9, 10, true);
@@ -47,18 +62,6 @@ public class LineCollider : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(12, 10, true);
                 Physics2D.IgnoreLayerCollision(12, 11, true);
                 break;
-        }
-
-        if (this.gameObject.tag == col.gameObject.tag)
-        {
-            Destroy(col.gameObject);
-            Destroy(this.gameObject);
-            Destroy(GameObject.Find("clicked"));
-            Score.IncreaseScore();
-        }
-        else
-        {
-           // Physics2D.IgnoreCollision(col.GetComponent<CircleCollider2D>(), GetComponent<Collider>());
-        }
+        } */
     }
 }
