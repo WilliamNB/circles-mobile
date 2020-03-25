@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ParticleEffect : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        if (this.GetComponent<ParticleSystem>().isPlaying)//this.particleSystem.isPlaying)
+        if (this.GetComponent<ParticleSystem>().isPlaying)
         {
             this.GetComponent<ParticleSystem>().Stop(); 
         }
     }
-    private void OnDestroy()
+    public void StartEffect(int x, int y)
     {
+        this.transform.position = new Vector2(x, y);
         this.GetComponent<ParticleSystem>().Play();
     }
 }

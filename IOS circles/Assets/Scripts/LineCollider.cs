@@ -25,23 +25,18 @@ public class LineCollider : MonoBehaviour
         //Check collision name
         Debug.Log("collision name = " + col.gameObject.name);
         //testing if colliding with wrong color increases fun
-
+        GameObject clicked = GameObject.Find("clicked");
         if (this.gameObject.tag == col.gameObject.tag)
         {
-            Destroy(col.gameObject);
-            col.gameObject.GetComponent<ParticleSystem>().Play();
             Destroy(this.gameObject);
-            Destroy(GameObject.Find("clicked"));
-            GameObject.Find("clicked").GetComponent<ParticleSystem>().Play();
+            RemoveObject(col.gameObject, clicked);
             Score.IncreaseScore();
+
         }
         else
         {
             Destroy(this.gameObject);
-            Destroy(GameObject.Find("clicked"));
-            GameObject.Find("clicked").GetComponent<ParticleSystem>().Play();
-            Destroy(col.gameObject);
-            col.gameObject.GetComponent<ParticleSystem>().Play();
+            RemoveObject(col.gameObject, clicked);
         }
 
        /* switch (this.gameObject.layer)
@@ -68,4 +63,19 @@ public class LineCollider : MonoBehaviour
                 break;
         } */
     }
+
+    public void RemoveObject(GameObject object1, GameObject object2)
+    {
+        Destroy(object1.GetComponent<Rigidbody2D>());
+        object1.GetComponent<CircleCollider2D>().enabled = false;
+        object1.GetComponent<SpriteRenderer>().enabled = false;
+        object1.GetComponent<TrailRenderer>().enabled = false;
+        object1.GetComponent<ParticleSystem>().Play();
+        object2.GetComponent<SpriteRenderer>().enabled = false;
+        object2.GetComponent<TrailRenderer>().enabled = false;
+        object2.GetComponent<ParticleSystem>().Play();
+        Destroy(object1, 1);
+        Destroy(object2, 2);
+    }
+
 }
