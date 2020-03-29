@@ -13,14 +13,20 @@ public class LifeController : MonoBehaviour
     private bool GLife;
     private bool PLife;
     private bool RLife;
+    private GameObject playUI;
+    private GameObject endUI;
+    private int finalScore;
 
 
     void Start()
     {
-         BLife = true;
-         GLife = true;
-         PLife = true;
-         RLife = true;
+        playUI = GameObject.Find("PlayUI");
+        endUI = GameObject.Find("EndUI");
+        endUI.SetActive(false);
+        BLife = true;
+        GLife = true;
+        PLife = true;
+        RLife = true;
     }
 
     public void LoseLife(int colour)
@@ -118,7 +124,11 @@ public class LifeController : MonoBehaviour
 
     private void EndGame()
     {
-
+        finalScore = Score.GetScore();
+        Debug.Log("final score  " + finalScore);
+        playUI.SetActive(false);
+        endUI.SetActive(true);
+        FinalScore.SetScore(finalScore);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 

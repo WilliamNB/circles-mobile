@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
 
-   public static int scoreValue = 3;
+    public static int scoreValue;
     public Text currentScore;
-    int objectCount;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +26,9 @@ public class Score : MonoBehaviour
     public static void IncreaseScore()
     {
         scoreValue += 1;
+    }
+    public static int GetScore()
+    {
+        return scoreValue;
     }
 }
