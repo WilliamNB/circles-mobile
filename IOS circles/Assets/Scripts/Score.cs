@@ -8,12 +8,13 @@ public class Score : MonoBehaviour
 {
 
     public static int scoreValue;
+    public static int circlesDestroyed;
     public Text currentScore;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentScore = GetComponent<Text>();
+        currentScore = GameObject.Find("Score").GetComponent<Text>();
         scoreValue = 0;
     }
 
@@ -25,10 +26,21 @@ public class Score : MonoBehaviour
 
     public static void IncreaseScore()
     {
-        scoreValue += 1;
+        int combo = ComboController.GetCombo();
+        if (combo == 0)
+        {
+            scoreValue += 1;
+            circlesDestroyed += 1;
+        }
+        else
+        {
+            scoreValue += (1 * combo);
+            circlesDestroyed += 1;
+        }
     }
     public static int GetScore()
     {
         return scoreValue;
     }
+
 }

@@ -60,6 +60,7 @@ public class CircleController : MonoBehaviour
         {
             Debug.Log("in if statement");
             Destroy(this.gameObject);
+            ComboController.ComboReset();
         }
     }
 }

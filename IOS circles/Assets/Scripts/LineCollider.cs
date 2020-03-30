@@ -16,12 +16,14 @@ public class LineCollider : MonoBehaviour
             Destroy(this.gameObject);
             RemoveObject(col.gameObject, clicked);
             Score.IncreaseScore();
+            ComboController.ComboIncrease();
 
         }
         else
         {
             Destroy(this.gameObject);
             RemoveObject(col.gameObject, clicked);
+            ComboController.ComboReset();
         }
     }
 

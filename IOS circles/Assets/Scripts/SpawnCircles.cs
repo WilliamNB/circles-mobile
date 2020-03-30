@@ -59,7 +59,7 @@ public class SpawnCircles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentScore = Score.scoreValue;
+        currentScore = Score.circlesDestroyed;
         if (currentScore > 1 && currentScore % 5 == 0)
         {
             if (increaseContoller == true)
