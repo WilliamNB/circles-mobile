@@ -16,6 +16,8 @@ public class LifeController : MonoBehaviour
     private GameObject playUI;
     private GameObject endUI;
     private int finalScore;
+    private int HighScore;
+    private bool isHS;
 
 
     void Start()
@@ -124,12 +126,15 @@ public class LifeController : MonoBehaviour
 
     private void EndGame()
     {
+        HighScore = PlayerPrefs.GetInt("Highscore");
         finalScore = Score.GetScore();
-        Debug.Log("final score  " + finalScore);
+        if (finalScore > HighScore)
+        {
+            PlayerPrefs.SetInt("Highscore", finalScore);
+        }
         playUI.SetActive(false);
         endUI.SetActive(true);
-        FinalScore.SetScore(finalScore);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        EndScore.SetScore(finalScore);
     }
 
 }
