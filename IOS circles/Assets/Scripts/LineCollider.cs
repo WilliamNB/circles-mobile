@@ -30,6 +30,7 @@ public class LineCollider : MonoBehaviour
     public void RemoveObject(GameObject object1, GameObject object2)
     {
         object1.GetComponent<ParticleSystem>().Play();
+        object1.GetComponent<AudioSource>().Play();
         object2.GetComponent<ParticleSystem>().Play();
         Destroy(object1.GetComponent<Rigidbody2D>());
         object1.GetComponent<CircleCollider2D>().enabled = false;
