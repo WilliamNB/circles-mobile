@@ -495,6 +495,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -630,6 +631,20 @@ MonoBehaviour:
   circlePrefab4: {fileID: 7182497949560139784, guid: 102529077dc8c384481f73322168e42d,
     type: 3}
   spawnRate: 7
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fbb068e25de84e47a4c69e8deac6e5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleM: {fileID: 5157988719558667298, guid: 43dbfaaa622dc9b468c101327b5670a0, type: 3}
+  spawnRate: 10
 --- !u!1 &794194498
 GameObject:
   m_ObjectHideFlags: 0
