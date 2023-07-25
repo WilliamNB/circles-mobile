@@ -30,16 +30,16 @@ public class Spawn : MonoBehaviour
     void Update()
     {
         //spawn at half way
-        if (transform.position.y < 0 && spawned < limit)
+        if (transform.position.y < 1 && spawned < limit)
         {
             //prevented circles spawned lik this spawning more
             if (this.name == ("circleB(Clone)") || this.name == ("circleG(Clone)") || this.name == ("circleP(Clone)") || this.name == ("circleR(Clone)") )
             {
+
                 numOfCircles = GameObject.FindGameObjectsWithTag(this.tag);
-               // Debug.Log("Test");
-               // Debug.Log("Debug    " + numOfCircles.Length);
                 //to only spawn if there isnt already a circle of the same colour
-                if (numOfCircles.Length == 2)
+                // THERE IS ALWAYS ONE OBJECT WITH THIS TAG OFFSCREEN
+                if (numOfCircles.Length < 3)
                  {
                     spawn();
                     spawned += 1;

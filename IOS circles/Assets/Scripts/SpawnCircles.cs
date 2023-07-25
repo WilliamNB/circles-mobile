@@ -21,7 +21,6 @@ public class SpawnCircles : MonoBehaviour
         StartCoroutine(circleWave());
     }
 
-
     private void spawn()
     {
         int range = Random.Range(1, 5);
@@ -75,7 +74,9 @@ public class SpawnCircles : MonoBehaviour
 
     public void increaseSpawnRate()
     {
-        spawnRate -= 0.1f;
-        increaseContoller = false;
+        if(spawnRate > 1){
+            spawnRate -= 0.1f;
+            increaseContoller = false;
+        }
     }
 }

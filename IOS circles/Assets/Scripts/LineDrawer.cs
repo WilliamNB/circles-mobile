@@ -32,7 +32,6 @@ public class LineDrawer : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider != null)
             {
-                Debug.Log("jit ");
                 switch (hit.transform.tag)
                 {
                     case "circleB":
@@ -86,9 +85,11 @@ public class LineDrawer : MonoBehaviour
     }
 
     void UpdateLine(Vector2 newTapPos) {
-        tapPositions.Add(newTapPos);
-        lineRenderer.positionCount++;
-        lineRenderer.SetPosition(lineRenderer.positionCount - 1, newTapPos);
-        edgeCollider.points = tapPositions.ToArray();
+        if(currentLine != null){
+            tapPositions.Add(newTapPos);
+            lineRenderer.positionCount++;
+            lineRenderer.SetPosition(lineRenderer.positionCount - 1, newTapPos);
+            edgeCollider.points = tapPositions.ToArray();
+        }
     }
 }
