@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -653,7 +653,7 @@ MonoBehaviour:
     type: 3}
   circlePrefab4: {fileID: 7182497949560139784, guid: 102529077dc8c384481f73322168e42d,
     type: 3}
-  spawnRate: 10
+  spawnRate: 100
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circleM: {fileID: 5157988719558667298, guid: 43dbfaaa622dc9b468c101327b5670a0, type: 3}
-  spawnRate: 10
+  spawnRate: 100
 --- !u!850595691 &613275581
 LightingSettings:
   m_ObjectHideFlags: 0
