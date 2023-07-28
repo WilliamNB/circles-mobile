@@ -655,7 +655,7 @@ MonoBehaviour:
     type: 3}
   circlePrefab4: {fileID: 7182497949560139784, guid: 102529077dc8c384481f73322168e42d,
     type: 3}
-  spawnRate: 100
+  spawnRate: 10
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,8 +690,8 @@ MonoBehaviour:
   - {r: 0.8962264, g: 0.37765506, b: 0.4360251, a: 0}
   - {r: 0.57707167, g: 0.25608158, b: 0.7830189, a: 0}
   - {r: 0.23199236, g: 0.5239456, b: 0.8018868, a: 0}
-  colorChangeSpeed: 5
-  time: 2
+  colorChangeSpeed: 1
+  time: 4
 --- !u!850595691 &613275581
 LightingSettings:
   m_ObjectHideFlags: 0

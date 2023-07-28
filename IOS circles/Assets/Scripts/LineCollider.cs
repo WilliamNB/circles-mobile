@@ -41,15 +41,31 @@ public class LineCollider : MonoBehaviour
             object1.GetComponent<AudioSource>().Play();
         }
         object2.GetComponent<ParticleSystem>().Play();
+
         Destroy(object1.GetComponent<Rigidbody2D>());
         object1.GetComponent<CircleCollider2D>().enabled = false;
         object1.GetComponent<SpriteRenderer>().enabled = false;
         object1.GetComponent<TrailRenderer>().enabled = false;
+
         object2.GetComponent<SpriteRenderer>().enabled = false;
         object2.GetComponent<TrailRenderer>().enabled = false;
+
+        if (object1.GetComponent<Rigidbody2D>() != null)
+        {
+            // The component exists, do something with it
+            Debug.Log(" is attached to this game object.");
+        }
+        else
+        {
+            // The component does not exist
+            Debug.Log(" is NOT attached to this game object.");
+        }
+
         Destroy(object1, 1);
         Destroy(object2, 1);
     }
+
+
 
 
 }
