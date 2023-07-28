@@ -9,6 +9,7 @@ public class LineDrawer : MonoBehaviour
     public GameObject linePrefabG;
     public GameObject linePrefabP;
     public GameObject linePrefabR;
+    public GameObject linePrefabM;
     public GameObject currentLine;
 
     public LineRenderer lineRenderer;
@@ -45,6 +46,9 @@ public class LineDrawer : MonoBehaviour
                         break;
                     case "circleR":
                         linePrefab = linePrefabR;
+                        break;
+                    case "circleM":
+                        linePrefab = linePrefabM;
                         break;
                 }
 

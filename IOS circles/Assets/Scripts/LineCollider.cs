@@ -11,7 +11,13 @@ public class LineCollider : MonoBehaviour
         Debug.Log("collision name = " + col.gameObject.name);
         //testing if colliding with wrong color increases fun
         GameObject clicked = GameObject.Find("clicked");
-        if (this.gameObject.tag == col.gameObject.tag)
+        if(this.gameObject.tag == "circleM" || col.gameObject.tag == "circleM"){
+            Destroy(this.gameObject);
+            RemoveObject(col.gameObject, clicked);
+            Score.IncreaseScore();
+            ComboController.ComboIncrease();
+
+        } else if (this.gameObject.tag == (col.gameObject.tag))
         {
             Destroy(this.gameObject);
             RemoveObject(col.gameObject, clicked);

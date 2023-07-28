@@ -9,6 +9,7 @@ TagManager:
   - circleP
   - circleR
   - despawn
+  - circleM
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Green
   - Purple
   - Red
-  - 
+  - Multi
   - 
   - 
   - 

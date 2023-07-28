@@ -13,6 +13,8 @@ public class LifeController : MonoBehaviour
     private bool GLife;
     private bool PLife;
     private bool RLife;
+
+    private ArrayList lives;
     private GameObject playUI;
     private GameObject endUI;
     private int finalScore;
@@ -25,6 +27,8 @@ public class LifeController : MonoBehaviour
         playUI = GameObject.Find("PlayUI");
         endUI = GameObject.Find("EndUI");
         endUI.SetActive(false);
+
+        lives = new ArrayList() {1, 2, 3, 4};
         BLife = true;
         GLife = true;
         PLife = true;
@@ -92,15 +96,19 @@ public class LifeController : MonoBehaviour
         {
             case 1:
                 BLife = false;
+                lives.Remove(1);
                 break;
             case 2:
                 GLife = false;
+                lives.Remove(2);
                 break;
             case 3:
                 PLife = false;
+                lives.Remove(3);
                 break;
             case 4:
                 RLife = false;
+                lives.Remove(4);
                 break;
         }
     }
@@ -120,6 +128,15 @@ public class LifeController : MonoBehaviour
                     break;
                 case "circleR":
                     LoseLife(4);
+                    break;
+                case "circleM":
+                    if(lives.Count == 0){
+                        EndGame();
+                    }else{
+                        int randomIndex = Random.Range(0,lives.Count);
+                        int life = (int)lives[randomIndex];
+                        LoseLife(life);
+                    }
                     break;
             }
     }
