@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -669,6 +670,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circleM: {fileID: 5157988719558667298, guid: 43dbfaaa622dc9b468c101327b5670a0, type: 3}
   spawnRate: 15
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570b29609ac651b409acccd99b5e1fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRef: {fileID: 0}
+  colors:
+  - {r: 0.13679238, g: 0.8207547, b: 0.4199655, a: 0}
+  - {r: 0.83276075, g: 0.9433962, b: 0.43313155, a: 0}
+  - {r: 0.8018868, g: 0.37360287, b: 0.035303116, a: 0}
+  - {r: 0.8962264, g: 0.37765506, b: 0.4360251, a: 0}
+  - {r: 0.57707167, g: 0.25608158, b: 0.7830189, a: 0}
+  - {r: 0.23199236, g: 0.5239456, b: 0.8018868, a: 0}
+  colorChangeSpeed: 5
+  time: 2
 --- !u!850595691 &613275581
 LightingSettings:
   m_ObjectHideFlags: 0
