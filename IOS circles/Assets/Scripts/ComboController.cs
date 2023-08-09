@@ -7,7 +7,8 @@ public class ComboController : MonoBehaviour
 {
     private static int comboMeter;
     private static int comboValue;
-    public Text comboScore;
+    public static Text comboScore;
+    public static Animator comboAnimator;
 
 
     // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class ComboController : MonoBehaviour
         comboScore = GetComponent<Text>();
         comboMeter = 0;
         comboValue = 0;
+        comboAnimator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -42,24 +44,31 @@ public class ComboController : MonoBehaviour
             switch (value) {
                 case 2:
                     comboValue = 2;
+                    ComboAnimation();
                     break;
                 case 5:
                     comboValue = 3;
+                    ComboAnimation();
                     break;
                 case 9:
                     comboValue = 4;
+                    ComboAnimation();
                     break;
                 case 14:
                     comboValue = 5;
+                    ComboAnimation();
                     break;
                 case 20:
                     comboValue = 6;
+                    ComboAnimation();
                     break;
                 case 27:
                     comboValue = 7;
+                    ComboAnimation();
                     break;
                 case 35:
                     comboValue = 8;
+                    ComboAnimation();
                     break;
 
             }
@@ -69,6 +78,10 @@ public class ComboController : MonoBehaviour
         {
             comboValue = 8;
         }
+    }
+
+    public static void ComboAnimation(){
+        comboAnimator?.SetTrigger("play");
     }
 
     public static int GetCombo()
