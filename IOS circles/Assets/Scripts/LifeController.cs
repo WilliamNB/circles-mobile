@@ -18,7 +18,7 @@ public class LifeController : MonoBehaviour
     private GameObject playUI;
     private GameObject endUI;
     private int finalScore;
-    private int HighScore;
+    private int highScore;
     private bool isHS;
 
 
@@ -28,7 +28,7 @@ public class LifeController : MonoBehaviour
         endUI = GameObject.Find("EndUI");
         endUI.SetActive(false);
 
-        lives = new ArrayList() {1, 2, 3, 4};
+        lives = new ArrayList() { 1, 2, 3, 4 };
         BLife = true;
         GLife = true;
         PLife = true;
@@ -40,7 +40,7 @@ public class LifeController : MonoBehaviour
         switch (colour)
         {
             case 1:
-                if(BLife == true)
+                if (BLife == true)
                 {
                     SetLife(colour);
                     image = GameObject.Find("B Life").GetComponent<Image>();
@@ -115,37 +115,40 @@ public class LifeController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-            switch (col.gameObject.tag)
-            {
-                case "circleB":
-                    LoseLife(1);
-                    break;
-                case "circleG":
-                    LoseLife(2);
-                    break;
-                case "circleP":
-                    LoseLife(3);
-                    break;
-                case "circleR":
-                    LoseLife(4);
-                    break;
-                case "circleM":
-                    if(lives.Count == 0){
-                        EndGame();
-                    }else{
-                        int randomIndex = Random.Range(0,lives.Count);
-                        int life = (int)lives[randomIndex];
-                        LoseLife(life);
-                    }
-                    break;
-            }
+        switch (col.gameObject.tag)
+        {
+            case "circleB":
+                LoseLife(1);
+                break;
+            case "circleG":
+                LoseLife(2);
+                break;
+            case "circleP":
+                LoseLife(3);
+                break;
+            case "circleR":
+                LoseLife(4);
+                break;
+            case "circleM":
+                if (lives.Count == 0)
+                {
+                    EndGame();
+                }
+                else
+                {
+                    int randomIndex = Random.Range(0, lives.Count);
+                    int life = (int)lives[randomIndex];
+                    LoseLife(life);
+                }
+                break;
+        }
     }
 
     private void EndGame()
     {
-        HighScore = PlayerPrefs.GetInt("Highscore");
+        highScore = PlayerPrefs.GetInt("Highscore");
         finalScore = Score.GetScore();
-        if (finalScore > HighScore)
+        if (finalScore > highScore)
         {
             PlayerPrefs.SetInt("Highscore", finalScore);
         }

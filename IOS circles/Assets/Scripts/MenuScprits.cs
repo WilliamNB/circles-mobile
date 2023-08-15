@@ -12,6 +12,8 @@ public class MenuScprits : MonoBehaviour
 
     public void Home()
     {
+        GameObject audioManager = GameObject.Find("AudioManager");
+        Destroy(audioManager);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
