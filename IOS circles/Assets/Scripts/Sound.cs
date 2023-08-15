@@ -25,14 +25,17 @@ public class Sound : MonoBehaviour
 
     public void Click()
     {
-        if(PlayerPrefs.GetInt("sound") == 0)
+        if (PlayerPrefs.GetInt("sound") == 0)
         {
             PlayerPrefs.SetInt("sound", 1);
             button.sprite = off;
-        }else if(PlayerPrefs.GetInt("sound") == 1)
+            FindObjectOfType<AudioManager>().Stop();
+        }
+        else if (PlayerPrefs.GetInt("sound") == 1)
         {
             PlayerPrefs.SetInt("sound", 0);
             button.sprite = on;
+            FindObjectOfType<AudioManager>().Play("Theme");
         }
         else
         {

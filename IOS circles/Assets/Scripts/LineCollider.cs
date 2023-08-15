@@ -11,13 +11,15 @@ public class LineCollider : MonoBehaviour
         Debug.Log("collision name = " + col.gameObject.name);
         //testing if colliding with wrong color increases fun
         GameObject clicked = GameObject.Find("clicked");
-        if(this.gameObject.tag == "circleM" || col.gameObject.tag == "circleM"){
+        if (this.gameObject.tag == "circleM" || col.gameObject.tag == "circleM")
+        {
             Destroy(this.gameObject);
             RemoveObject(col.gameObject, clicked);
             Score.IncreaseScore();
             ComboController.ComboIncrease();
 
-        } else if (this.gameObject.tag == (col.gameObject.tag))
+        }
+        else if (this.gameObject.tag == (col.gameObject.tag))
         {
             Destroy(this.gameObject);
             RemoveObject(col.gameObject, clicked);
@@ -36,10 +38,7 @@ public class LineCollider : MonoBehaviour
     public void RemoveObject(GameObject object1, GameObject object2)
     {
         object1.GetComponent<ParticleSystem>().Play();
-        if(PlayerPrefs.GetInt("sound") == 0 )
-        {
-            object1.GetComponent<AudioSource>().Play();
-        }
+        FindObjectOfType<AudioManager>().Play("Pop");
         object2.GetComponent<ParticleSystem>().Play();
 
         Destroy(object1.GetComponent<Rigidbody2D>());
