@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LineCollider : MonoBehaviour
 {
-
+    public GameObject particleEffect;
     void OnCollisionEnter2D(Collision2D col)
     {
         //Check collision name
@@ -37,9 +37,9 @@ public class LineCollider : MonoBehaviour
 
     public void RemoveObject(GameObject object1, GameObject object2)
     {
-        object1.GetComponent<ParticleSystem>().Play();
         FindObjectOfType<AudioManager>().Play("Pop");
-        object2.GetComponent<ParticleSystem>().Play();
+        playEffect(object1);
+        playEffect(object2);
 
         Destroy(object1.GetComponent<Rigidbody2D>());
         object1.GetComponent<CircleCollider2D>().enabled = false;
@@ -49,19 +49,16 @@ public class LineCollider : MonoBehaviour
         object2.GetComponent<SpriteRenderer>().enabled = false;
         object2.GetComponent<TrailRenderer>().enabled = false;
 
-        if (object1.GetComponent<Rigidbody2D>() != null)
-        {
-            // The component exists, do something with it
-            Debug.Log(" is attached to this game object.");
-        }
-        else
-        {
-            // The component does not exist
-            Debug.Log(" is NOT attached to this game object.");
-        }
-
         Destroy(object1, 1);
         Destroy(object2, 1);
+    }
+
+    private void playEffect(GameObject object1)
+    {
+        GameObject effect1 = Instantiate(particleEffect);
+        effect1.transform.position = new Vector2(object1.transform.position.x, object1.transform.position.y);
+        var main = effect1.GetComponent<ParticleSystem>().main;
+        main.startColor = object1.GetComponent<TrailRenderer>().startColor;
     }
 
 
