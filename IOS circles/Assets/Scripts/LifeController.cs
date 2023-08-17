@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LifeController : MonoBehaviour
 {
@@ -113,9 +114,9 @@ public class LifeController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    public void SelectLife(String tag)
     {
-        switch (col.gameObject.tag)
+        switch (tag)
         {
             case "circleB":
                 LoseLife(1);
@@ -136,12 +137,17 @@ public class LifeController : MonoBehaviour
                 }
                 else
                 {
-                    int randomIndex = Random.Range(0, lives.Count);
+                    int randomIndex = UnityEngine.Random.Range(0, lives.Count);
                     int life = (int)lives[randomIndex];
                     LoseLife(life);
                 }
                 break;
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        SelectLife(col.gameObject.tag);
     }
 
     private void EndGame()

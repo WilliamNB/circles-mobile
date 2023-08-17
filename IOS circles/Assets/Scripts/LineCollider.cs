@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LineCollider : MonoBehaviour
 {
+    public LifeController lifeController;
     public GameObject particleEffect;
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -32,6 +33,7 @@ public class LineCollider : MonoBehaviour
             Destroy(this.gameObject);
             RemoveObject(col.gameObject, clicked);
             ComboController.ComboReset();
+            lifeController.SelectLife(gameObject.tag);
         }
     }
 

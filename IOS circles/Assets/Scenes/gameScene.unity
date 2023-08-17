@@ -1331,6 +1331,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
         type: 3}
+      propertyPath: lifeController
+      value: 
+      objectReference: {fileID: 1751596366}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
       propertyPath: particleEffect
       value: 
       objectReference: {fileID: 8395230048790442557, guid: 49f40beb673acbd4ca7e3bffb67aad34,
@@ -1380,6 +1385,11 @@ PrefabInstance:
       propertyPath: m_Positions.Array.data[1].z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2490173190136944588, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: lifeController
+      value: 
+      objectReference: {fileID: 1751596366}
     - target: {fileID: 2490173190136944588, guid: 3572643cfa53e6b42897730bc4ceac3c,
         type: 3}
       propertyPath: particleEffect
@@ -1458,10 +1468,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3799117550724134036, guid: 3572643cfa53e6b42897730bc4ceac3c,
         type: 3}
+      propertyPath: lifeController
+      value: 
+      objectReference: {fileID: 1751596366}
+    - target: {fileID: 3799117550724134036, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
       propertyPath: particleEffect
       value: 
       objectReference: {fileID: 8395230048790442557, guid: 49f40beb673acbd4ca7e3bffb67aad34,
         type: 3}
+    - target: {fileID: 4010137821963705998, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: lifeController
+      value: 
+      objectReference: {fileID: 1751596366}
     - target: {fileID: 4010137821963705998, guid: 3572643cfa53e6b42897730bc4ceac3c,
         type: 3}
       propertyPath: particleEffect
@@ -1485,10 +1505,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944834024787881130, guid: 3572643cfa53e6b42897730bc4ceac3c,
         type: 3}
+      propertyPath: lifeController
+      value: 
+      objectReference: {fileID: 1751596366}
+    - target: {fileID: 4944834024787881130, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
       propertyPath: particleEffect
       value: 
       objectReference: {fileID: 8395230048790442557, guid: 49f40beb673acbd4ca7e3bffb67aad34,
         type: 3}
+    - target: {fileID: 5301407514565498417, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: lifeController
+      value: 
+      objectReference: {fileID: 1751596366}
     - target: {fileID: 5301407514565498417, guid: 3572643cfa53e6b42897730bc4ceac3c,
         type: 3}
       propertyPath: particleEffect
