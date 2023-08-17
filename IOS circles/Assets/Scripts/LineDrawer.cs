@@ -19,13 +19,13 @@ public class LineDrawer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) == true)
+        if (Input.GetMouseButtonDown(0) == true)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
@@ -53,13 +53,13 @@ public class LineDrawer : MonoBehaviour
                 }
 
                 CreateLine();
-            } 
+            }
         }
 
         if (Input.GetMouseButton(0))
         {
             Vector2 tempPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if(Vector2.Distance(tempPos, tapPositions[tapPositions.Count - 1]) > .1f)
+            if (Vector2.Distance(tempPos, tapPositions[tapPositions.Count - 1]) > .1f)
             {
                 UpdateLine(tempPos);
             }
@@ -68,7 +68,8 @@ public class LineDrawer : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             Destroy(currentLine);
-            if(GameObject.Find("clicked")){
+            if (GameObject.Find("clicked"))
+            {
                 Destroy(GameObject.Find("clicked"));
             }
             Destroy(GameObject.Find("clicked"));
@@ -87,12 +88,15 @@ public class LineDrawer : MonoBehaviour
         tapPositions.Add(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         lineRenderer.SetPosition(0, tapPositions[0]);
         lineRenderer.SetPosition(1, tapPositions[1]);
+        lineRenderer.numCapVertices = 10;
         edgeCollider.points = tapPositions.ToArray();
 
     }
 
-    void UpdateLine(Vector2 newTapPos) {
-        if(currentLine != null){
+    void UpdateLine(Vector2 newTapPos)
+    {
+        if (currentLine != null)
+        {
             tapPositions.Add(newTapPos);
             lineRenderer.positionCount++;
             lineRenderer.SetPosition(lineRenderer.positionCount - 1, newTapPos);
