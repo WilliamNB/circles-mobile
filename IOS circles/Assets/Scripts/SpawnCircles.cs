@@ -9,6 +9,7 @@ public class SpawnCircles : MonoBehaviour
     public GameObject circlePrefab3;
     public GameObject circlePrefab4;
     public float spawnRate = 3;
+    public bool isInfo;
     private Vector2 screenBounds;
     private float fix = 1.2F;
     private int currentScore;
@@ -18,10 +19,10 @@ public class SpawnCircles : MonoBehaviour
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        StartCoroutine(circleWave());
+        StartCoroutine(CircleWave());
     }
 
-    private void spawn()
+    private void Spawn()
     {
         int range = Random.Range(1, 5);
         switch (range)
@@ -46,12 +47,25 @@ public class SpawnCircles : MonoBehaviour
 
     }
 
-    IEnumerator circleWave()
+    private void DemoSpawn()
+    {
+        GameObject test = Instantiate(circlePrefab1) as GameObject;
+        test.transform.position = new Vector2(screenBounds.x - 1, screenBounds.y + 1);
+    }
+
+    IEnumerator CircleWave()
     {
         while (true)
         {
             yield return new WaitForSeconds(spawnRate);
-            spawn();
+            if (isInfo)
+            {
+                DemoSpawn();
+            }
+            else
+            {
+                Spawn();
+            }
         }
     }
 
@@ -63,7 +77,7 @@ public class SpawnCircles : MonoBehaviour
         {
             if (increaseContoller == true)
             {
-                increaseSpawnRate();
+                IncreaseSpawnRate();
             }
         }
         else
@@ -72,9 +86,10 @@ public class SpawnCircles : MonoBehaviour
         }
     }
 
-    public void increaseSpawnRate()
+    public void IncreaseSpawnRate()
     {
-        if(spawnRate > 1){
+        if (spawnRate > 1)
+        {
             spawnRate -= 0.1f;
             increaseContoller = false;
         }

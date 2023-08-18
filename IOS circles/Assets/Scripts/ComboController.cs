@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,14 +8,14 @@ public class ComboController : MonoBehaviour
 {
     private static int comboMeter;
     private static int comboValue;
-    public static Text comboScore;
+    public static TextMeshProUGUI comboScore;
     public static Animator comboAnimator;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        comboScore = GetComponent<Text>();
+        comboScore = GetComponent<TextMeshProUGUI>();
         comboMeter = 0;
         comboValue = 0;
         comboAnimator = GetComponent<Animator>();
@@ -39,9 +40,10 @@ public class ComboController : MonoBehaviour
 
     public static void ComboChange(int value)
     {
-        if(value <= 35)
+        if (value <= 35)
         {
-            switch (value) {
+            switch (value)
+            {
                 case 2:
                     comboValue = 2;
                     ComboAnimation();
@@ -80,7 +82,8 @@ public class ComboController : MonoBehaviour
         }
     }
 
-    public static void ComboAnimation(){
+    public static void ComboAnimation()
+    {
         comboAnimator?.SetTrigger("play");
     }
 

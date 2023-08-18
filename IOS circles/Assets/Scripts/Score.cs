@@ -9,12 +9,12 @@ public class Score : MonoBehaviour
 
     public static int scoreValue;
     public static int circlesDestroyed;
-    public Text currentScore;
+    public TextMeshProUGUI currentScore;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentScore = GameObject.Find("Score").GetComponent<Text>();
+        currentScore = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
         scoreValue = 0;
     }
 
