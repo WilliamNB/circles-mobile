@@ -5,8 +5,6 @@ using UnityEngine;
 public class CircleController : MonoBehaviour
 {
     private Vector2 screenBounds;
-    private int state = 0;
-
 
     // Start is called before the first frame update
     void Start()
@@ -33,24 +31,13 @@ public class CircleController : MonoBehaviour
 
                 if (hit.transform.position.x == this.transform.position.x)
                 {
-                    this.setState(1);
                     this.name = "clicked";
+                    Destroy(this.GetComponent<Rigidbody2D>());
+                    Destroy(this.GetComponent<CircleCollider2D>());
                 }
             }
         }
 
-        if (state == 1)
-        {
-            //this.GetComponent<Rigidbody2D>().gravityScale = 0;
-            Destroy(this.GetComponent<Rigidbody2D>());
-            Destroy(this.GetComponent<CircleCollider2D>());
-        }
-
-    }
-
-    private void setState(int value)
-    {
-        state = value;
     }
 
     void OnCollisionEnter2D(Collision2D col)

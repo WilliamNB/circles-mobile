@@ -68,10 +68,6 @@ public class LineDrawer : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             Destroy(currentLine);
-            if (GameObject.Find("clicked"))
-            {
-                Destroy(GameObject.Find("clicked"));
-            }
             Destroy(GameObject.Find("clicked"));
         }
 
