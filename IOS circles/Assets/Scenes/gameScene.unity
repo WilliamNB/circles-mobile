@@ -387,7 +387,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85ea7520ce8845a438356bf624ed4241, type: 3}
   m_Name: 
@@ -402,6 +402,7 @@ MonoBehaviour:
     type: 3}
   spawnRate: 3
   isInfo: 0
+  spawnRange: 2.2
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -497,14 +498,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85ea7520ce8845a438356bf624ed4241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circlePrefab1: {fileID: 275169258380839281, guid: b45dc35c2d857b6429470916b2cd42f1,
+  circlePrefab1: {fileID: 7413663672827317563, guid: 6c1545a03cc83624ebc8fbab7a208142,
     type: 3}
-  circlePrefab2: {fileID: 7413663672827317563, guid: 6c1545a03cc83624ebc8fbab7a208142,
+  circlePrefab2: {fileID: 275169258380839281, guid: b45dc35c2d857b6429470916b2cd42f1,
     type: 3}
   circlePrefab3: {fileID: 3703947815757982780, guid: eb259cec343bd364485ca3ec0720b6f3,
     type: 3}
@@ -512,6 +513,7 @@ MonoBehaviour:
     type: 3}
   spawnRate: 10
   isInfo: 0
+  spawnRange: 2.2
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +521,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fbb068e25de84e47a4c69e8deac6e5e, type: 3}
   m_Name: 
@@ -1834,8 +1836,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751596362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -6.49, z: -11.521484}
-  m_LocalScale: {x: 6.0375, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: -7, z: 0}
+  m_LocalScale: {x: 6, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

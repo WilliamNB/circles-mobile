@@ -11,7 +11,7 @@ public class SpawnCircles : MonoBehaviour
     public float spawnRate = 3;
     public bool isInfo;
     private Vector2 screenBounds;
-    private float fix = 1.2F;
+    public float spawnRange = 1.5F;
     private int currentScore;
     private bool increaseContoller = true;
 
@@ -28,20 +28,22 @@ public class SpawnCircles : MonoBehaviour
         switch (range)
         {
             case 1:
-                GameObject test = Instantiate(circlePrefab1) as GameObject;
-                test.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y + 1);
+                GameObject circleG = Instantiate(circlePrefab1) as GameObject;
+                // Vector2 location = GenerateSpawnLocation();
+                // test.transform.position = location;
+                circleG.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
                 break;
             case 2:
-                GameObject test2 = Instantiate(circlePrefab2) as GameObject;
-                test2.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y + 1);
+                GameObject circleB = Instantiate(circlePrefab2) as GameObject;
+                circleB.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
                 break;
             case 3:
-                GameObject test3 = Instantiate(circlePrefab3) as GameObject;
-                test3.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y + 1);
+                GameObject circleP = Instantiate(circlePrefab3) as GameObject;
+                circleP.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
                 break;
             case 4:
-                GameObject test4 = Instantiate(circlePrefab4) as GameObject;
-                test4.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y + 1);
+                GameObject circleR = Instantiate(circlePrefab4) as GameObject;
+                circleR.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
                 break;
         }
 
@@ -94,4 +96,16 @@ public class SpawnCircles : MonoBehaviour
             increaseContoller = false;
         }
     }
+
+    // private Vector2 GenerateSpawnLocation()
+    // {
+    //     Vector2 test = new Vector2(screenBounds.x, screenBounds.y + 1);
+    //     RaycastHit2D hit = Physics2D.Raycast(test, Vector2.left);
+    //     if(hit.collider != null){
+
+    //     }
+    //     //if hit spawn inverse of hit x vector
+    //     //else spawn random
+    //     return test;
+    // }
 }

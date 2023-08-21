@@ -24,12 +24,19 @@ public class CircleController : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider != null)
             {
-
-                if (hit.transform.position.x == this.transform.position.x)
+                if (GameObject.Find("clicked") == null)
                 {
-                    this.name = "clicked";
-                    Destroy(this.GetComponent<Rigidbody2D>());
-                    Destroy(this.GetComponent<CircleCollider2D>());
+
+                    if (hit.transform.position.x == this.transform.position.x)
+                    {
+                        this.name = "clicked";
+                        Destroy(this.GetComponent<Rigidbody2D>());
+                        Destroy(this.GetComponent<CircleCollider2D>());
+                    }
+                }
+                else
+                {
+                    Destroy(this.gameObject);
                 }
             }
         }
