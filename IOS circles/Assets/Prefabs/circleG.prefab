@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5137650450619719264}
   - component: {fileID: -2417608867437216370}
   - component: {fileID: -2035210828663429504}
+  - component: {fileID: 8645123029920583935}
   m_Layer: 15
   m_Name: circleG
   m_TagString: circleG
@@ -307,3 +308,17 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 0
+--- !u!114 &8645123029920583935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7413663672827317563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fde13a2de213ae4c93a467eef47c647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTimeBtwSpawns: 0.4
+  echo: {fileID: 6705716084848350511, guid: 0776609232ef1c247a61202c50a8cf73, type: 3}

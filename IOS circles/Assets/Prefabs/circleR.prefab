@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -8946819389704604700}
   - component: {fileID: 7696625548144332227}
   - component: {fileID: 6264927547772223216}
+  - component: {fileID: -7350305547651096228}
   m_Layer: 15
   m_Name: circleR
   m_TagString: circleR
@@ -184,7 +185,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7182497949560139784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -289,3 +290,17 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 0
+--- !u!114 &-7350305547651096228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182497949560139784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fde13a2de213ae4c93a467eef47c647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTimeBtwSpawns: 0.4
+  echo: {fileID: 169301018006165942, guid: 2e45fafdc365e4c46beafda22818c38c, type: 3}

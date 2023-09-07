@@ -10,6 +10,7 @@ TagManager:
   - circleR
   - despawn
   - circleM
+  - echo
   layers:
   - Default
   - TransparentFX
