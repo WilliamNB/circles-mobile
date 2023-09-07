@@ -184,7 +184,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7413663672827317563}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -197,7 +197,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -222,15 +222,33 @@ TrailRenderer:
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0.012863159
         value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 0.3924868
+        outSlope: 0.3924868
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.57666844
+      - serializedVersion: 3
+        time: 0.2828592
+        value: 0.18279046
+        inSlope: -1.4021235
+        outSlope: -1.4021235
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6430726
+        value: 0.8790524
+        inSlope: -0.019272583
+        outSlope: -0.019272583
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -250,14 +268,14 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.29584193, g: 0.8396226, b: 0.2732734, a: 1}
-      key1: {r: 0.29584193, g: 0.8396226, b: 0.2732734, a: 1}
+      key1: {r: 0.9696453, g: 1, b: 0.9685534, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
+      ctime0: 42212
       ctime1: 65535
       ctime2: 0
       ctime3: 0
@@ -273,8 +291,8 @@ TrailRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 1
-      m_ColorSpace: -1
+      m_Mode: 0
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -284,7 +302,7 @@ TrailRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.5
+  m_MinVertexDistance: 0.3
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 1

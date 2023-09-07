@@ -402,7 +402,7 @@ MonoBehaviour:
     type: 3}
   spawnRate: 3
   isInfo: 0
-  spawnRange: 2.2
+  spawnRange: 2.1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -511,9 +511,9 @@ MonoBehaviour:
     type: 3}
   circlePrefab4: {fileID: 7182497949560139784, guid: 102529077dc8c384481f73322168e42d,
     type: 3}
-  spawnRate: 10
+  spawnRate: 8
   isInfo: 0
-  spawnRange: 2.2
+  spawnRange: 2.1
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,13 +521,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fbb068e25de84e47a4c69e8deac6e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   circleM: {fileID: 5157988719558667298, guid: 43dbfaaa622dc9b468c101327b5670a0, type: 3}
-  spawnRate: 5
+  spawnRate: 15
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,20 +1200,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1380412794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1295945705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1295945700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68c067e58bdb37e4e8d7c21be407960e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counter: 0
-  timer: 0
 --- !u!1001 &1380412794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1456,11 +1442,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3457842727375363552, guid: 3572643cfa53e6b42897730bc4ceac3c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1295945705}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3572643cfa53e6b42897730bc4ceac3c, type: 3}
 --- !u!1 &1380412795 stripped
 GameObject:

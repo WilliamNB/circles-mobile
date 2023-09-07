@@ -4,47 +4,42 @@ using UnityEngine;
 
 public class LineColor : MonoBehaviour
 {
-    Material material;
-    Renderer renderer;
-    public int counter;
+    //Material material;
+    private GameObject line;
+    private Renderer renderer;
     public float timer;
+    public Material color1;
+    public Material color2;
+    public Material color3;
+    public Material color4;
 
     // Start is called before the first frame update
     void Start()
     {
-        material = GetComponent<LineRenderer>().material;
-        renderer = GetComponent<Renderer>();
-        counter = 0;
-        timer = 0f;
+        //material = GetComponent<LineRenderer>().material;
+        line = GameObject.Find("LineM");
+        renderer = line.GetComponent<Renderer>();
+        InvokeRepeating("ColorChange", 0f, timer);
     }
 
-    // Update is called once per frame
-    void Update()
+    void ColorChange()
     {
-        InvokeRepeating("Test", 1f, 5f);
-        // if (timer)
-        // {
-        //     timer += Time.deltaTime;
-        //     // material.color = Color.black;
-        //     renderer.material.color = Color.red;
-        // }
-        // else
-        // {
-        //     counter++;
-        // }
-    }
+        int lineColor = Random.Range(1, 5);
 
-    void Test()
-    {
-        if (counter % 5 == 1)
+        switch (lineColor)
         {
-            renderer.material.color = Color.red;
-            counter++;
-        }
-        else
-        {
-            renderer.material.color = Color.blue;
-            counter++;
+            case 1:
+                renderer.material.color = color1.color;
+                break;
+            case 2:
+                renderer.material.color = color2.color;
+                break;
+            case 3:
+                renderer.material.color = color3.color;
+                break;
+            case 4:
+                renderer.material.color = color4.color;
+                break;
         }
     }
 }

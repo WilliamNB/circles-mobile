@@ -156,14 +156,14 @@ MonoBehaviour:
   sounds:
   - name: Theme
     clip: {fileID: 8300000, guid: 3adc19a142fd9184b829d911ef98ca06, type: 3}
-    volume: 0.522
-    pitch: 1
+    volume: 0.5
+    pitch: 0.6
     loop: 1
     source: {fileID: 0}
   - name: Pop
-    clip: {fileID: 8300000, guid: bc53586a5a7f6a046b816a6ee5553d9e, type: 3}
-    volume: 0.7
-    pitch: 1
+    clip: {fileID: 8300000, guid: 81985642a7ea2154791789d675be34a0, type: 3}
+    volume: 0.2
+    pitch: 0.5
     loop: 0
     source: {fileID: 0}
 --- !u!4 &293526390
