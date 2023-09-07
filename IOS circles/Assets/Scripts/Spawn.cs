@@ -6,8 +6,7 @@ public class Spawn : MonoBehaviour
 {
 
     public GameObject circlePrefab;
-    private Vector2 screenBounds;
-    private float fix = 1.2F;
+    public Camera mainCamera;
     private int limit = 1;
     private int spawned = 0;
     private GameObject[] numOfCircles;
@@ -15,15 +14,7 @@ public class Spawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-    }
-
-    private void spawn()
-    {
-        GameObject test = Instantiate(circlePrefab) as GameObject;
-        test.transform.position = new Vector2(Random.Range(-fix, fix), screenBounds.y + 1);
-        
-              
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -33,18 +24,19 @@ public class Spawn : MonoBehaviour
         if (transform.position.y < 1 && spawned < limit)
         {
             //prevented circles spawned lik this spawning more
-            if (this.name == ("circleB(Clone)") || this.name == ("circleG(Clone)") || this.name == ("circleP(Clone)") || this.name == ("circleR(Clone)") )
+            if (this.name is "circleB(Clone)" or "circleG(Clone)" or "circleP(Clone)" or "circleR(Clone)")
             {
 
                 numOfCircles = GameObject.FindGameObjectsWithTag(this.tag);
                 //to only spawn if there isnt already a circle of the same colour
                 // THERE IS ALWAYS ONE OBJECT WITH THIS TAG OFFSCREEN
                 if (numOfCircles.Length < 3)
-                 {
-                    spawn();
+                {
+                    //Spawner();
+                    mainCamera.GetComponent<SpawnCircles>().SpawnSpecific(this.name);
                     spawned += 1;
-                 }
+                }
             }
-        } 
+        }
     }
 }

@@ -28,25 +28,46 @@ public class SpawnCircles : MonoBehaviour
         switch (range)
         {
             case 1:
-                GameObject circleG = Instantiate(circlePrefab1) as GameObject;
-                // Vector2 location = GenerateSpawnLocation();
-                // test.transform.position = location;
+                GameObject circleG = Instantiate(circlePrefab1);
                 circleG.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
                 break;
             case 2:
-                GameObject circleB = Instantiate(circlePrefab2) as GameObject;
+                GameObject circleB = Instantiate(circlePrefab2);
                 circleB.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
                 break;
             case 3:
-                GameObject circleP = Instantiate(circlePrefab3) as GameObject;
+                GameObject circleP = Instantiate(circlePrefab3);
                 circleP.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
                 break;
             case 4:
-                GameObject circleR = Instantiate(circlePrefab4) as GameObject;
+                GameObject circleR = Instantiate(circlePrefab4);
                 circleR.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
                 break;
         }
 
+    }
+
+    public void SpawnSpecific(string name)
+    {
+        switch (name)
+        {
+            case "circleG(Clone)":
+                GameObject circleG = Instantiate(circlePrefab1);
+                circleG.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
+                break;
+            case "circleB(Clone)":
+                GameObject circleB = Instantiate(circlePrefab2);
+                circleB.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
+                break;
+            case "circleP(Clone)":
+                GameObject circleP = Instantiate(circlePrefab3);
+                circleP.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
+                break;
+            case "circleR(Clone)":
+                GameObject circleR = Instantiate(circlePrefab4);
+                circleR.transform.position = new Vector2(Random.Range(-spawnRange, spawnRange), screenBounds.y + 1);
+                break;
+        }
     }
 
     private void DemoSpawn()
