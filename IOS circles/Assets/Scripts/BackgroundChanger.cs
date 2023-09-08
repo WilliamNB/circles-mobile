@@ -20,16 +20,16 @@ public class BackgroundChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        colorChange();
-        colorChangeTime();
+        ColorChange();
+        ColorChangeTime();
     }
 
-    private void colorChange()
+    private void ColorChange()
     {
         cameraRef.backgroundColor = Color.Lerp(cameraRef.backgroundColor, colors[colorIndex], colorChangeSpeed * Time.deltaTime);
     }
 
-    private void colorChangeTime()
+    private void ColorChangeTime()
     {
         if (currentTime <= 0)
         {
