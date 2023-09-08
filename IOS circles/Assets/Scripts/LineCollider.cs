@@ -56,12 +56,6 @@ public class LineCollider : MonoBehaviour
         PlayEffect(object1);
         PlayEffect(object2);
 
-        Destroy(object1.GetComponent<Rigidbody2D>());
-        object1.GetComponent<CircleCollider2D>().enabled = false;
-        object1.GetComponent<SpriteRenderer>().enabled = false;
-
-        object2.GetComponent<SpriteRenderer>().enabled = false;
-
         Destroy(object1);
         Destroy(object2);
     }
