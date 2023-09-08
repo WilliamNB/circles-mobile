@@ -6,7 +6,7 @@ public class LineColor : MonoBehaviour
 {
     //Material material;
     private GameObject line;
-    private Renderer renderer;
+    private new Renderer renderer;
     public float timer;
     public Material color1;
     public Material color2;

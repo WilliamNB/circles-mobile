@@ -48,7 +48,6 @@ public class CircleController : MonoBehaviour
         Debug.Log("enter collision");
         if (col.gameObject.tag == "despawn")
         {
-            Debug.Log("in if statement");
             Destroy(this.gameObject);
             ComboController.ComboReset();
         }

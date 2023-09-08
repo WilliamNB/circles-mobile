@@ -1210,6 +1210,66 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
         type: 3}
+      propertyPath: red.b
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: red.g
+      value: 0.22352941
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: red.r
+      value: 0.8980392
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: blue.b
+      value: 0.8980392
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: blue.g
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: blue.r
+      value: 0.11764706
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: green.b
+      value: 0.2784314
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: green.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: green.r
+      value: 0.2627451
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: purple.b
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: purple.g
+      value: 0.14117648
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
+      propertyPath: purple.r
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849658345013164589, guid: 3572643cfa53e6b42897730bc4ceac3c,
+        type: 3}
       propertyPath: lifeController
       value: 
       objectReference: {fileID: 1751596366}

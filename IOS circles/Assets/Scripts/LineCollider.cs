@@ -6,6 +6,10 @@ public class LineCollider : MonoBehaviour
 {
     public LifeController lifeController;
     public GameObject particleEffect;
+    public Color green;
+    public Color blue;
+    public Color red;
+    public Color purple;
     void OnCollisionEnter2D(Collision2D col)
     {
         //Check collision name
@@ -40,26 +44,43 @@ public class LineCollider : MonoBehaviour
     public void RemoveObject(GameObject object1, GameObject object2)
     {
         FindObjectOfType<AudioManager>().Play("Pop");
-        playEffect(object1);
-        playEffect(object2);
+        PlayEffect(object1);
+        PlayEffect(object2);
 
         // Destroy(object1.GetComponent<Rigidbody2D>());
         // object1.GetComponent<CircleCollider2D>().enabled = false;
         // object1.GetComponent<SpriteRenderer>().enabled = false;
 
         // object2.GetComponent<SpriteRenderer>().enabled = false;
-        // object2.GetComponent<TrailRenderer>().enabled = false;
 
         Destroy(object1);
         Destroy(object2);
     }
 
-    private void playEffect(GameObject object1)
+    private void PlayEffect(GameObject object1)
     {
         GameObject effect1 = Instantiate(particleEffect);
         effect1.transform.position = new Vector2(object1.transform.position.x, object1.transform.position.y);
         var main = effect1.GetComponent<ParticleSystem>().main;
-        main.startColor = object1.GetComponent<TrailRenderer>().startColor;
+        main.startColor = Color.black;
+        // switch (object1.tag)
+        // {
+        //     case "circleG":
+        //         main.startColor = green;
+        //         break;
+        //     case "circleB":
+        //         main.startColor = blue;
+        //         break;
+        //     case "circleR":
+        //         main.startColor = red;
+        //         break;
+        //     case "circleP":
+        //         main.startColor = purple;
+        //         break;
+        //     case "circleM":
+        //         main.startColor = purple;
+        //         break;
+        // }
     }
 
 }
