@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,16 +43,15 @@ public class LineCollider : MonoBehaviour
         playEffect(object1);
         playEffect(object2);
 
-        Destroy(object1.GetComponent<Rigidbody2D>());
-        object1.GetComponent<CircleCollider2D>().enabled = false;
-        object1.GetComponent<SpriteRenderer>().enabled = false;
-        object1.GetComponent<TrailRenderer>().enabled = false;
+        // Destroy(object1.GetComponent<Rigidbody2D>());
+        // object1.GetComponent<CircleCollider2D>().enabled = false;
+        // object1.GetComponent<SpriteRenderer>().enabled = false;
 
-        object2.GetComponent<SpriteRenderer>().enabled = false;
-        object2.GetComponent<TrailRenderer>().enabled = false;
+        // object2.GetComponent<SpriteRenderer>().enabled = false;
+        // object2.GetComponent<TrailRenderer>().enabled = false;
 
-        Destroy(object1, 1);
-        Destroy(object2, 1);
+        Destroy(object1);
+        Destroy(object2);
     }
 
     private void playEffect(GameObject object1)
@@ -62,8 +61,5 @@ public class LineCollider : MonoBehaviour
         var main = effect1.GetComponent<ParticleSystem>().main;
         main.startColor = object1.GetComponent<TrailRenderer>().startColor;
     }
-
-
-
 
 }
