@@ -8,10 +8,10 @@ public class LineCollider : MonoBehaviour
     public GameObject particleEffect;
     private Color[] particleColors;
 
-    private Color32 green = new(67, 160, 71, 255);
-    private Color32 blue = new(30, 136, 229, 255);
-    private Color32 red = new(229, 57, 53, 255);
-    private Color32 purple = new(142, 36, 170, 255);
+    private Color32 green = new(67, 160, 71, 255); //43a047
+    private Color32 blue = new(30, 136, 229, 255); //1e88e5
+    private Color32 red = new(229, 57, 53, 255); //e53935
+    private Color32 purple = new(142, 36, 170, 255); //8e24aa
 
     void Start()
     {
